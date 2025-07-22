@@ -109,6 +109,12 @@ Preferred communication style: Simple, everyday language.
 - **Static Serving**: Express serves built frontend from `dist/public`
 - **Environment**: Production configuration via NODE_ENV
 
+### GitHub Pages Deployment
+- **Static Build**: Static files copied to project root for GitHub Pages
+- **GitHub Actions**: Automated deployment workflow configured
+- **Build Command**: `npm run build` creates production-ready static site
+- **Deployment Files**: `index.html`, `assets/` folder, and static resources in root
+
 ### Database Management
 - **Schema Changes**: Drizzle Kit push command for schema updates
 - **Migrations**: Generated migration files in `./migrations`
