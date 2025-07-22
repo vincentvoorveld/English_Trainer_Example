@@ -24,11 +24,20 @@ jobs:
       run: npm ci
       
     - name: Build static site
-      run: npm run build
+      run: |
+        npm run build
+        # Fix asset paths for GitHub Pages
+        sed -i 's|src="/assets/|src="./assets/|g' dist/public/index.html
+        sed -i 's|href="/assets/|href="./assets/|g' dist/public/index.html
+        # Remove development script
+        sed -i '/replit-dev-banner/d' dist/public/index.html
+        # Copy built files to root
+        cp -r dist/public/* ./
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/public
+        publish_dir: ./
+        publish_branch: gh-pages
