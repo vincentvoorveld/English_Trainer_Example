@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
     },
     {
       text: "Working with Sarah prepared me perfectly for my promotion interview. Her presentation coaching gave me the confidence to showcase my ideas clearly and professionally.",
-      name: "David Kumar",
+      name: "Eric Balkissoon",
       role: "Senior Manager, FinanceFirst"
     },
     {
