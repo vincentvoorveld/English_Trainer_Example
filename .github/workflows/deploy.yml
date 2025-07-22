@@ -33,6 +33,10 @@ jobs:
         sed -i '/replit-dev-banner/d' dist/public/index.html
         # Copy built files to root
         cp -r dist/public/* ./
+        # Create .nojekyll to disable Jekyll processing
+        touch .nojekyll
+        # Create 404.html for SPA routing (copy of index.html with SPA redirect script)
+        cp index.html 404.html
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
